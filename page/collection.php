@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
     <h1 class="page-collection-title">Ma collection <span class="page-collection-title-btn">+</span></h1>
     <div class="page-collection-marque nintendo"> 
         <h2>nintendo</h2>
-        <div class="page-collection-marque-consoles">
+        <div class="page-collection-marque-consoles ">
             <div class="page-collection-marque-consoles-console">
 
                 <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
@@ -33,6 +34,30 @@
                 <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
             </div>
             <div class="page-collection-marque-consoles-console">
+
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
+                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+            </div>
+             <div class="page-collection-marque-consoles-console">
+
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
+                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+            </div>
+             <div class="page-collection-marque-consoles-console">
+
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
+                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+            </div>
+             <div class="page-collection-marque-consoles-console">
+
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
+                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+            </div>
+             <div class="page-collection-marque-consoles-console">
 
                 <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
                 <p class="page-collection-marque-consoles-console-possesion">325/341</p>
@@ -40,7 +65,7 @@
             </div>
 
         </div>
-
+        <button class="page-collection-marque-show">Show all</button>
     </div>
 
     <div class="page-collection-marque playstation"> 
@@ -72,10 +97,10 @@
             </div>
 
         </div>
-
+         <button class="page-collection-marque-show">Show all</button>
     </div>
 
-    <div class="page-collection-marque playstation"> 
+    <div class="page-collection-marque xbox"> 
         <h2>X box</h2>
         <div class="page-collection-marque-consoles">
             <div class="page-collection-marque-consoles-console">
@@ -104,12 +129,14 @@
             </div>
 
         </div>
-
+         <button class="page-collection-marque-show">Show all</button>
     </div>
 </div>
 
 
 
-<?php include '../include/footer.php'; ?>    
+<?php include '../include/footer.php'; ?>
+<script src="js/script.js" defer ></script>  
 </body>
+
 </html>
