@@ -4,13 +4,21 @@ $laptop : 950px;
 $desktop : 1200px;
 $ultraWide : 1920px;
 
+// =====================
+// RESET
+// =====================
+
 * {
   margin: 0;
   padding: 0;
   color: white;
   box-sizing: border-box;
 }
- 
+
+// =====================
+// BODY
+// =====================
+
 body {
   height: 100vh;
   background-color: #0F0F1A;
@@ -18,9 +26,11 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
- 
-/* HEADER */
- 
+
+// =====================
+// HEADER
+// =====================
+
 .header {
   
   top: 0;
@@ -63,9 +73,11 @@ body {
     }
   }
 }
- 
-/* FOOTER */
- 
+
+// =====================
+// FOOTER
+// =====================
+
 .footer {
   width: 100%;
   padding: 25px 40px;
@@ -109,9 +121,11 @@ body {
     }
   }
 }
- 
-/* ACCUEIL */
- 
+
+// =====================
+// PAGE (commun)
+// =====================
+
 .page {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: flex;
@@ -128,118 +142,12 @@ body {
       margin-bottom: 25px;
     }
   }
-  &-collection {
-    &-title {
-      margin: 5px 0 15px;
- 
-      &-btn {
-        background-color: green;
-        padding: 4px 10px;
-        margin: 5px;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-      }
-    }
- 
-    &-marque {
-      background-color: #111739;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 10px;
- 
-      @media (max-width: $tablet) {
-        padding: 15px 10px;
-      }
-      &-show{
-        background-color: red;
-         @media screen AND (min-width:$laptop){
-            display:none;
-
-          }
-      }
-      &-consoles {
-        display: flex;
-        gap: 25px;
-        flex-wrap: wrap;
- 
-        @media (max-width: $tablet) {
-          gap: 12px;
-        }
-        @media (min-width: $laptop) {
-          flex-wrap:nowrap;
-          overflow-x: auto;
-        }
-        &.maxify{
-          .page-collection-marque-consoles{
-            &-console{
-              display:block;
-            }
-          }
-        }
- 
-        &-console {
-          border-radius: 0 0 5px 5px;
-          background-color: #141427;
-          max-width: 350px;
-          overflow: hidden;
-          display: none;
-          @media screen AND (min-width:$laptop){
-            display:block;
-            min-width:200px;
-
-          }
-          &:nth-child(1){
-            display: block;
-          }
-          &:nth-child(2){
-            display: block;
-          }
-          &:nth-child(3){
-            display: block;
-          }
- 
-          // Sur mobile, 2 cartes côte à côte
-          @media (max-width: 600px) {
-            flex: 1 1 calc(50% - 12px);
-            max-width: calc(50% - 12px);
-            min-width: 130px;
-          }
- 
-          &-possesion {
-            margin: 8px 0 8px 8px;
- 
-            @media (max-width: $tablet) {
-              font-size: 12px;
-              margin: 5px 0 5px 6px;
-            }
-          }
- 
-          &-titre {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 5px;
-            padding-top: 8px;
- 
-            @media (max-width: $tablet) {
-              font-size: 13px;
-              padding-top: 5px;
-            }
-          }
- 
-          &-img {
-            margin-bottom: 1px;
-            width: 100%;
-            display: block;
-            aspect-ratio: 16 / 10;
-            object-fit: cover;
-          }
-        }
-      }
-    }
-  }
 }
- 
+
+// =====================
+// PAGE ACCUEIL (index.php)
+// =====================
+
 .stats {
   padding-top: 20vh;
   display: flex;
@@ -303,8 +211,123 @@ body {
     }
   }
 }
- 
-/* COLLECTION */
- 
 
+// =====================
+// PAGE COLLECTION (collection.php)
+// =====================
+
+.page {
+  &-collection {
+    &-title {
+      margin: 5px 0 15px;
  
+      &-btn {
+        background-color: green;
+        padding: 4px 10px;
+        margin: 5px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+ 
+    &-marque {
+      background-color: #111739;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+ 
+      @media (max-width: $tablet) {
+        padding: 15px 10px;
+      }
+
+      &-show{
+        background-color: red;
+         @media screen AND (min-width:$laptop){
+            display:none;
+
+          }
+      }
+
+      &-consoles {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+ 
+        @media (max-width: $tablet) {
+          gap: 12px;
+        }
+        @media (min-width: $laptop) {
+          flex-wrap:nowrap;
+          overflow-x: auto;
+        }
+
+        &.maxify{
+          .page-collection-marque-consoles{
+            &-console{
+              display:block;
+            }
+          }
+        }
+ 
+        &-console {
+          border-radius: 0 0 5px 5px;
+          background-color: #141427;
+          max-width: 350px;
+          overflow: hidden;
+          display: none;
+
+          @media screen AND (min-width:$laptop){
+            display:block;
+            min-width:200px;
+          }
+
+          &:nth-child(1){
+            display: block;
+          }
+          &:nth-child(2){
+            display: block;
+          }
+          &:nth-child(3){
+            display: block;
+          }
+ 
+          @media (max-width: 600px) {
+            flex: 1 1 calc(50% - 12px);
+            max-width: calc(50% - 12px);
+            min-width: 130px;
+          }
+ 
+          &-possesion {
+            margin: 8px 0 8px 8px;
+ 
+            @media (max-width: $tablet) {
+              font-size: 12px;
+              margin: 5px 0 5px 6px;
+            }
+          }
+ 
+          &-titre {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding-top: 8px;
+ 
+            @media (max-width: $tablet) {
+              font-size: 13px;
+              padding-top: 5px;
+            }
+          }
+ 
+          &-img {
+            margin-bottom: 1px;
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
