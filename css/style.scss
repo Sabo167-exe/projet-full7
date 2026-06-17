@@ -354,3 +354,112 @@ body {
     }
   }
 }
+/* PROFIL EDIT - PDP */
+.profil-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 35px;
+  padding: 40px 20px;
+
+  @media (max-width: $tablet) {
+    gap: 20px;
+    padding: 25px 15px;
+  }
+
+  &-apercu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    &-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 100%;
+      object-fit: cover;
+      box-shadow: 5px 5px 8px var(--shadow);
+
+      @media (max-width: $tablet) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    &-label {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+  }
+
+  &-form {
+    background-color: var(--bg-card);
+    border-radius: 25px;
+    padding: 35px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 5px 5px 8px var(--shadow);
+    width: 100%;
+    max-width: 450px;
+    transition: background-color 0.3s ease;
+
+    @media (max-width: $tablet) {
+      padding: 25px 20px;
+      border-radius: 15px;
+    }
+
+    &-label {
+      font-size: 20px;
+      text-align: center;
+
+      @media (max-width: $tablet) {
+        font-size: 16px;
+      }
+    }
+
+    &-input {
+      background-color: var(--bg-secondary);
+      border: 2px solid var(--btn-border);
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      transition: border-color 0.2s;
+
+      &:hover {
+        border-color: var(--text);
+      }
+    }
+
+    &-btn {
+      background-color: green;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 35px;
+      font-size: 20px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+
+      @media (max-width: $tablet) {
+        font-size: 16px;
+        padding: 10px 25px;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 5px 5px 10px var(--shadow);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

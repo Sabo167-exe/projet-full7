@@ -336,4 +336,110 @@ body {
   .stats-item-label {
     font-size: 15px;
   }
+}
+
+/* PROFIL EDIT - PDP */
+.profil-edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 35px;
+  padding: 40px 20px;
+}
+@media (max-width: 450px) {
+  .profil-edit {
+    gap: 20px;
+    padding: 25px 15px;
+  }
+}
+.profil-edit-apercu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.profil-edit-apercu-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 5px 5px 8px var(--shadow);
+}
+@media (max-width: 450px) {
+  .profil-edit-apercu-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.profil-edit-apercu-label {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+.profil-edit-form {
+  background-color: var(--bg-card);
+  border-radius: 25px;
+  padding: 35px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 5px 5px 8px var(--shadow);
+  width: 100%;
+  max-width: 450px;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 450px) {
+  .profil-edit-form {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+}
+.profil-edit-form-label {
+  font-size: 20px;
+  text-align: center;
+}
+@media (max-width: 450px) {
+  .profil-edit-form-label {
+    font-size: 16px;
+  }
+}
+.profil-edit-form-input {
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--btn-border);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.profil-edit-form-input:hover {
+  border-color: var(--text);
+}
+.profil-edit-form-btn {
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 35px;
+  font-size: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+@media (max-width: 450px) {
+  .profil-edit-form-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+}
+.profil-edit-form-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 10px var(--shadow);
+}
+.profil-edit-form-btn:active {
+  transform: translateY(0);
 }/*# sourceMappingURL=style.css.map */
