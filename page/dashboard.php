@@ -10,28 +10,18 @@ $pseudo = $_SESSION['pseudo'];
 
 $nb_console = 4;
 $progression = 58;
-$sql= " SELECT COUNT(g.id_jeux) AS nb_jeux , g.console_id
+$sql= "
+SELECT SUM(nb_jeux) AS nb_jeux_total, COUNT(console_id) AS nb_consoles
+FROM (SELECT COUNT(g.id_jeux) AS nb_jeux , g.console_id
         FROM Ownerships AS o
         INNER JOIN Games AS g
         ON o.id_jeux = g.id_jeux
         WHERE o.id_user = :id_user
-        GROUP BY g.console_id";
+        GROUP BY g.console_id) AS jeux_consoles";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id_user' => $_SESSION['id_user']]);
-$listeJeux =  [];
-while($row= $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $listeJeux[] = $row;
-}
-$stmt = $pdo->prepare("SELECT COUNT(id_jeux) AS nbJeux FROM Ownerships WHERE id_user = :id_user");
-$stmt->execute([':id_user' => $_SESSION['id_user']]);
-$nbJeux = [];
 
-$nbJeux = $stmt->fetch(PDO::FETCH_ASSOC);
-$possedé = $nbJeux['nbJeux'];
-var_dump($nbJeux);
-echo "<br>";
-var_dump($listeJeux);
-
+$nb_jeux_consoles = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -60,12 +50,12 @@ var_dump($listeJeux);
     <div class="stats">
 
         <div class="stats-item">
-            <span class="stats-item-value"><?php echo $possedé ?></span>
+            <span class="stats-item-value"><?php echo $nb_jeux_consoles["nb_jeux_total"] ?></span>
             <p class="stats-item-label">Possédé</p>
         </div>
 
         <div class="stats-item">
-            <span class="stats-item-value"><?php echo $nb_console ?></span>
+            <span class="stats-item-value"><?php echo $nb_jeux_consoles["nb_consoles"] ?></span>
             <p class="stats-item-label">Nombre de console</p>
         </div>
 
