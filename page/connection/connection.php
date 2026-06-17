@@ -3,7 +3,7 @@ session_start();
 
 // Si déjà connecté, rediriger
 if (isset($_SESSION['id_user'])) {
-    header('Location: ../index.php');
+    header('Location: ../dashboard.php');
     exit;
 }
 
