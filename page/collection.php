@@ -14,50 +14,25 @@
 
 
 <div class="page-collection">
-    <h1 class="page-collection-title">Ma collection <span class="page-collection-title-btn">+</span></h1>
+    <h1 class="page-collection-title">Ma collection <a href="addcolection.php"><span class="page-collection-title-btn">+</span></a></h1>
 
     <div class="page-collection-marque nintendo">
         <h2>nintendo</h2>
         <div class="page-collection-marque-consoles">
             <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/GameBoy.png" alt="image GameBoy">
                 <p class="page-collection-marque-consoles-console-possesion">325/341</p>
                 <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
             </div>
             <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/NES.png" alt="image NES">
                 <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+                <h3 class="page-collection-marque-consoles-console-titre">NES</h3>
             </div>
             <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/N64.png" alt="image Image N64">
                 <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/GAME BOY.webp" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">325/341</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
+                <h3 class="page-collection-marque-consoles-console-titre">N64</h3>
             </div>
         </div>
         <button class="page-collection-marque-show">▼</button>
@@ -120,6 +95,7 @@
 
 <?php include '../include/footer.php'; ?>
 
-<script src="js/script.js" defer></script>
+
+<script src="js/toogleconsole.js" defer></script>
 </body>
 </html>

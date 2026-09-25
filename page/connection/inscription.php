@@ -61,40 +61,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
+    <link rel="stylesheet" href="../../cssold/oldstyle.css">
 </head>
-<body>
+<body class="page">
 
-<h1>Inscription</h1>
+<h1 class="form_title">Inscription</h1>
 
 <?php if ($erreur): ?>
-    <p><?= htmlspecialchars($erreur) ?></p>
+    <p class="form_error"><?= htmlspecialchars($erreur) ?></p>
 <?php endif; ?>
 
 <?php if ($succes): ?>
-    <p><?= htmlspecialchars($succes) ?></p>
-    <p><a href="connection.php">Se connecter</a></p>
+    <p class="form_success"><?= htmlspecialchars($succes) ?></p>
+    <p class="form_link"><a class="form_link-action" href="connection.php">Se connecter</a></p>
 <?php else: ?>
 
-<form method="POST" action="inscription.php">
-    <label for="pseudo">Pseudo (max 25 caractères) :</label><br>
-    <input type="text" id="pseudo" name="pseudo" maxlength="25" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required><br><br>
+<form class="form_body" method="POST" action="inscription.php">
+    <div class="form_group">
+        <label class="form_label" for="pseudo">Pseudo (max 25 caractères) :</label><br>
+        <input class="form_input" type="text" id="pseudo" name="pseudo" maxlength="25" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required><br><br>
+    </div>
 
-    <label for="email">Adresse email :</label><br>
-    <input type="email" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required><br><br>
+    <div class="form_group">
+        <label class="form_label" for="email">Adresse email :</label><br>
+        <input class="form_input" type="email" id="email" name="email" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required><br><br>
+    </div>
 
-    <label for="mdp">Mot de passe (min 6 caractères) :</label><br>
-    <input type="password" id="mdp" name="mdp" required><br><br>
+    <div class="form_group">
+        <label class="form_label" for="mdp">Mot de passe (min 6 caractères) :</label><br>
+        <input class="form_input" type="password" id="mdp" name="mdp" required><br><br>
+    </div>
 
-    <label for="mdp2">Confirmer le mot de passe :</label><br>
-    <input type="password" id="mdp2" name="mdp2" required><br><br>
+    <div class="form_group">
+        <label class="form_label" for="mdp2">Confirmer le mot de passe :</label><br>
+        <input class="form_input" type="password" id="mdp2" name="mdp2" required><br><br>
+    </div>
 
-    <button type="submit">S'inscrire</button>
+    <button class="form_button" type="submit">S'inscrire</button>
 </form>
 
 <?php endif; ?>
 
 <br>
-<p>Déjà un compte ? <a href="connection.php">Se connecter</a></p>
+<p class="form_link">Déjà un compte ? <a class="form_link-action" href="connection.php">Se connecter</a></p>
 
 </body>
 </html>

@@ -38,27 +38,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body>
+<body class="page page_connection">
 
-<h1>Connexion</h1>
+    <div class="form">
+        <h1 class="form_title">Connexion</h1>
 
-<?php if ($erreur): ?>
-    <p><?= htmlspecialchars($erreur) ?></p>
-<?php endif; ?>
+        <?php if ($erreur): ?>
+            <p class="form_error"><?= htmlspecialchars($erreur) ?></p>
+        <?php endif; ?>
 
-<form method="POST" action="connection.php">
-    <label for="pseudo">Pseudo :</label><br>
-    <input type="text" id="pseudo" name="pseudo" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required><br><br>
+        <form class="form_body" method="POST" action="connection.php">
+            <div class="form_group">
+                <label class="form_label" for="pseudo">Pseudo :</label>
+                <input class="form_input" type="text" id="pseudo" name="pseudo" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required>
+            </div>
 
-    <label for="mdp">Mot de passe :</label><br>
-    <input type="password" id="mdp" name="mdp" required><br><br>
+            <div class="form_group">
+                <label class="form_label" for="mdp">Mot de passe :</label>
+                <input class="form_input" type="password" id="mdp" name="mdp" required>
+            </div>
 
-    <button type="submit">Se connecter</button>
-</form>
+            <button class="form_button" type="submit">Se connecter</button>
+        </form>
 
-<br>
-<p>Pas encore de compte ? <a href="inscription.php">S'inscrire</a></p>
+        <p class="form_link">
+            Pas encore de compte ? <a class="form_link-action" href="inscription.php">S'inscrire</a>
+        </p>
+    </div>
 
 </body>
 </html>
