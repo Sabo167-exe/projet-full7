@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
