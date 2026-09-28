@@ -1,6 +1,6 @@
 <?php
 $host   = '127.0.0.1';
-$dbname = 'projet full7';
+$dbname = 'projet_full7';
 $user   = 'root';
 $pass   = '';
 
