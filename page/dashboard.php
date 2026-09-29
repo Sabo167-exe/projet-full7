@@ -1,6 +1,6 @@
 <?php   
 session_start();
-require_once 'connection/db.php';
+require_once '../include/db.php';
 if (!isset($_SESSION['id_user'])) {
     header('Location: connection/connection.php');
     exit;
@@ -8,8 +8,8 @@ if (!isset($_SESSION['id_user'])) {
   
 $pseudo = $_SESSION['pseudo'];
 
-$nb_console = 4;
-$progression = 58;
+$nb_console = 0;
+$progression = 0;
 $sql= "
 SELECT SUM(nb_jeux) AS nb_jeux_total, COUNT(console_id) AS nb_consoles
 FROM (SELECT COUNT(g.id_jeux) AS nb_jeux , g.console_id
