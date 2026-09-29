@@ -11,9 +11,9 @@
     --bg-secondary: #141427;
     --bg-card: #111739;
     --text: white;
-    --text-muted: rgba(255,255,255,0.6);
     --shadow: #00000067;
     --btn-border: rgba(255,255,255,0.4);
+    --police: 'Poppins', sans-serif;
 }
 
 :root.light {
@@ -21,7 +21,6 @@
     --bg-secondary: #ddddf0;
     --bg-card: #c8c8e8;
     --text: #111;
-    --text-muted: rgba(0,0,0,0.5);
     --shadow: #00000025;
     --btn-border: rgba(0,0,0,0.3);
 }

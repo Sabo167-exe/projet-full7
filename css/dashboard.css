@@ -1,14 +1,15 @@
 /* ACCUEIL */
 .page {
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-family: var(--police);
     display: flex;
     flex-direction: column;
     flex: 1;
     overflow-y: auto;
 }
 .page-title {
+    font-family:  Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-size: 41px;
-    margin-bottom: 40px;
+    margin: 40px 0 0 40px;
 }
 @media (max-width: 450px) {
     .page-title {
