@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 // Si déjà connecté, rediriger
@@ -7,7 +9,7 @@ if (isset($_SESSION['id_user'])) {
     exit;
 }
 
-require_once 'db.php';
+require_once '../../include/db.php';
 
 $erreur  = '';
 $succes  = '';
@@ -31,20 +33,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erreur = "Le mot de passe doit contenir au moins 6 caractères.";
     } else {
         // Vérifier si le pseudo existe déjà
-        $stmt = $pdo->prepare("SELECT id_user FROM Users WHERE pseudo = :pseudo LIMIT 1");
+        $stmt = $pdo->prepare("SELECT id_user FROM users WHERE pseudo = :pseudo LIMIT 1");
         $stmt->execute([':pseudo' => $pseudo]);
         if ($stmt->fetch()) {
             $erreur = "Ce pseudo est déjà utilisé.";
         } else {
             // Vérifier si l'email existe déjà
-            $stmt = $pdo->prepare("SELECT id_user FROM Users WHERE email = :email LIMIT 1");
+            $stmt = $pdo->prepare("SELECT id_user FROM users WHERE email = :email LIMIT 1");
             $stmt->execute([':email' => $email]);
             if ($stmt->fetch()) {
                 $erreur = "Cette adresse email est déjà utilisée.";
             } else {
                 // Insertion
                 $hash = password_hash($mdp, PASSWORD_DEFAULT);
-                $stmt = $pdo->prepare("INSERT INTO Users (pseudo, email, mdp) VALUES (:pseudo, :email, :mdp)");
+                $stmt = $pdo->prepare("INSERT INTO users (pseudo, email, mdp) VALUES (:pseudo, :email, :mdp)");
                 $stmt->execute([
                     ':pseudo' => $pseudo,
                     ':email'  => $email,

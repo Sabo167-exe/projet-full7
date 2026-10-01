@@ -1,4 +1,6 @@
 <?php   
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 require_once '../include/db.php';
 if (!isset($_SESSION['id_user'])) {
@@ -8,13 +10,12 @@ if (!isset($_SESSION['id_user'])) {
   
 $pseudo = $_SESSION['pseudo'];
 
-$nb_console = 0;
-$progression = 0;
+// Nombre de jeux possédés et nombre de consoles où l'utilisateur a au moins un jeu
 $sql= "
 SELECT SUM(nb_jeux) AS nb_jeux_total, COUNT(console_id) AS nb_consoles
 FROM (SELECT COUNT(g.id_jeux) AS nb_jeux , g.console_id
-        FROM Ownerships AS o
-        INNER JOIN Games AS g
+        FROM ownerships AS o
+        INNER JOIN games AS g
         ON o.id_jeux = g.id_jeux
         WHERE o.id_user = :id_user
         GROUP BY g.console_id) AS jeux_consoles";
@@ -22,6 +23,18 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([':id_user' => $_SESSION['id_user']]);
 
 $nb_jeux_consoles = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// SUM() renvoie NULL si l'utilisateur ne possède aucun jeu, on force donc 0
+$nb_possedes = (int) ($nb_jeux_consoles['nb_jeux_total'] ?? 0);
+$nb_consoles = (int) ($nb_jeux_consoles['nb_consoles'] ?? 0);
+
+// Nombre total de jeux dans la base
+$nb_total_jeux = (int) $pdo->query("SELECT COUNT(*) FROM games")->fetchColumn();
+
+// Pourcentage de jeux possédés par rapport au nombre total de jeux
+$progression = $nb_total_jeux > 0
+    ? round($nb_possedes / $nb_total_jeux * 100)
+    : 0; // évite la division par zéro
 
 ?>
 <!DOCTYPE html>
@@ -42,7 +55,7 @@ $nb_jeux_consoles = $stmt->fetch(PDO::FETCH_ASSOC);
 <body class="page">
 
     <?php include '../include/header.php'; ?>
-
+<?php echo " jeux dispo $nb_total_jeux "?>
     <h1 class="page-title">
         <?php echo "bonjour $pseudo"; ?>
     </h1>

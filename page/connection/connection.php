@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 
 // Si déjà connecté, rediriger
@@ -18,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($pseudo) || empty($mdp)) {
         $erreur = "Veuillez remplir tous les champs.";
     } else {
-        $stmt = $pdo->prepare("SELECT id_user, pseudo, mdp FROM Users WHERE pseudo = :pseudo LIMIT 1");
+        $stmt = $pdo->prepare("SELECT id_user, pseudo, mdp FROM users WHERE pseudo = :pseudo LIMIT 1");
         $stmt->execute([':pseudo' => $pseudo]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -49,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p class="form_error"><?= htmlspecialchars($erreur) ?></p>
         <?php endif; ?>
 
-        <form class="form_body" method="POST" action="connection.php">
+        <form class="form_body" method="POST" action="">
             <div class="form_group">
                 <label class="form_label" for="pseudo">Pseudo :</label>
                 <input class="form_input" type="text" id="pseudo" name="pseudo" value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required>
