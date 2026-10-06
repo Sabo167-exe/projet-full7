@@ -1,0 +1,30 @@
+
+@import url('common.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('dashboard.css');
+@import url('collection.css');
+@import url('login.css');
+
+/* THEMES */
+:root {
+    --bg-form: linear-gradient(135deg, #141426 0%, #191B38 100%);
+    --bg-main: linear-gradient(135deg, #0F0F1A 0%, #121A35 50%, #18234A 100%);
+    --bg-secondary: linear-gradient(135deg, #141427 0%, #1A1E3D 100%);
+    --bg-card: linear-gradient(135deg, #111739 0%, #182451 50%, #1C2B5C 100%);
+    --text: white;
+    --shadow: #00000067;
+    --btn-border: rgba(255,255,255,0.4);
+    --police: 'Poppins', sans-serif;
+}
+
+:root.light {
+    --bg-form: linear-gradient(135deg, #E4EEFF 0%, #D4E3FA 100%);
+    --bg-main: linear-gradient(135deg, #D8E7FF 0%, #C5D9F5 50%, #B7D0F0 100%);
+    --bg-secondary: linear-gradient(135deg, #D2E2FA 0%, #C1D5EF 100%);
+    --bg-card: linear-gradient(135deg, #EAF2FF 0%, #D8E7FA 50%, #C9DCF3 100%);
+    --text: #111;
+    --shadow: #00000025;
+    --btn-border: rgba(0,0,0,0.3);
+}
+

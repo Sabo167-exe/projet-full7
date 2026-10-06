@@ -11,5 +11,6 @@
 
 
 <?php include '../include/header.php'; ?> 
+<script src="js/script.js" defer></script>
 </body>
 </html>

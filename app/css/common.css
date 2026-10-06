@@ -7,7 +7,7 @@
 
 body {
     height: 100vh;
-    background-color: var(--bg-main);
+    background: var(--bg-main);
     display: flex;
     flex-direction: column;
     overflow: hidden;

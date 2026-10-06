@@ -15,7 +15,7 @@
     text-decoration: none;
 }   
 .page-collection-marque {
-    background-color: var(--bg-card);
+    background: var(--bg-card);
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -65,7 +65,7 @@
 }
 .page-collection-marque-consoles-console {
     border-radius: 0 0 5px 5px;
-    background-color: var(--bg-secondary);
+    background: var(--bg-secondary);
     max-width: 350px;
     overflow: hidden;
     display: none;
