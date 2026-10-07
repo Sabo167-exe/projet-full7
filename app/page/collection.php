@@ -12,28 +12,27 @@
 
 <?php include '../include/header.php'; ?> 
 
-
 <div class="page-collection">
     <h1 class="page-collection-title">Ma collection <a href="addcolection.php" class="btn-add"><span class="page-collection-title-btn">+</span></a></h1>
 
     <div class="page-collection-marque nintendo">
         <h2>Nintendo</h2>
         <div class="page-collection-marque-consoles">
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/GameBoy.png" alt="image GameBoy">
+            <a href="detail-console.php?c=4" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/4.png" alt="image GameBoy">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/NES.png" alt="image NES">
+            </a>
+            <a href="detail-console.php?c=5" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/5.png" alt="image NES">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">NES</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/N64.png" alt="image Image N64">
+            </a>
+            <a href="detail-console.php?c=6" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/nintendo/6.png" alt="image N64">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">N64</h3>
-            </div>
+            </a>
         </div>
         <button class="page-collection-marque-show">▼</button>
     </div>
@@ -41,26 +40,26 @@
     <div class="page-collection-marque playstation">
         <h2>PlayStation</h2>
         <div class="page-collection-marque-consoles">
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/ps1.png" alt="image PS1">
+            <a href="detail-console.php?c=1" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/1.png" alt="image PS1">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">PS1</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/ps2.png" alt="image PS2">
+            </a>
+            <a href="detail-console.php?c=2" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/2.png" alt="image PS2">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">PS2</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/ps3.png" alt="image PS3">
+            </a>
+            <a href="detail-console.php?c=3" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/3.png" alt="image PS3">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">PS3</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/pSP.png" alt="image PS1">
+            </a>
+            <a href="detail-console.php?c=10" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/playstation/10.png" alt="image PSP">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">PSP</h3>
-            </div>
+            </a>
         </div>
         <button class="page-collection-marque-show">▼</button>
     </div>
@@ -68,21 +67,21 @@
     <div class="page-collection-marque xbox">
         <h2>SEGA</h2>
         <div class="page-collection-marque-consoles">
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/MasterSystem.png" alt="image Xbox">
+            <a href="detail-console.php?c=7" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/7.png" alt="image Master System">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">Master System</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/MegaDrive.png" alt="image Xbox">
+            </a>
+            <a href="detail-console.php?c=8" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/8.png" alt="image Mega Drive">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">Mega Drive</h3>
-            </div>
-            <div class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/Saturn.png" alt="image Xbox">
+            </a>
+            <a href="detail-console.php?c=9" class="page-collection-marque-consoles-console">
+                <img class="page-collection-marque-consoles-console-img" src="../img/console/SEGA/9.png" alt="image Saturn">
                 <p class="page-collection-marque-consoles-console-possesion">0/10</p>
                 <h3 class="page-collection-marque-consoles-console-titre">Saturn</h3>
-            </div>
+            </a>
         </div>
         <button class="page-collection-marque-show">▼</button>
     </div>
