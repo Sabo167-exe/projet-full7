@@ -5,6 +5,7 @@
 @import url('dashboard.css');
 @import url('collection.css');
 @import url('login.css');
+@import url('console.css');
 
 /* THEMES */
 :root {
@@ -28,3 +29,6 @@
     --btn-border: rgba(0,0,0,0.3);
 }
 
+a {
+    text-decoration: none;
+}
