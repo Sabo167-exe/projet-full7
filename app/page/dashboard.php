@@ -12,13 +12,13 @@ $pseudo = $_SESSION['pseudo'];
 
 // Nombre de jeux possédés et nombre de consoles où l'utilisateur a au moins un jeu
 $sql= "
-SELECT SUM(nb_jeux) AS nb_jeux_total, COUNT(console_id) AS nb_consoles
-FROM (SELECT COUNT(g.id_jeux) AS nb_jeux , g.console_id
+SELECT SUM(nb_jeux) AS nb_jeux_total, COUNT(id_console) AS nb_consoles
+FROM (SELECT COUNT(g.id_jeux) AS nb_jeux , g.id_console
         FROM ownerships AS o
         INNER JOIN games AS g
         ON o.id_jeux = g.id_jeux
         WHERE o.id_user = :id_user
-        GROUP BY g.console_id) AS jeux_consoles";
+        GROUP BY g.id_console) AS jeux_consoles";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id_user' => $_SESSION['id_user']]);
 
