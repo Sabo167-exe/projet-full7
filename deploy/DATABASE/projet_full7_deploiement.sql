@@ -65,14 +65,14 @@ CREATE TABLE `games` (
   `nom` varchar(100) NOT NULL,
   `annee_sortie` year(4) DEFAULT NULL,
   `description` text DEFAULT NULL,
-  `console_id` int(11) DEFAULT NULL
+  `id_console` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `games`
 --
 
-INSERT INTO `games` (`id_jeux`, `nom`, `annee_sortie`, `description`, `console_id`) VALUES
+INSERT INTO `games` (`id_jeux`, `nom`, `annee_sortie`, `description`, `id_console`) VALUES
 (1, 'Final Fantasy VII', '1997', 'RPG culte de Square dans lequel Cloud Strife, ancien soldat, rejoint un groupe de résistants contre la corporation Shinra et le redoutable Sephiroth. Scénario marquant, musiques de Nobuo Uematsu et cinématiques révolutionnaires pour l\'époque.', 1),
 (2, 'Metal Gear Solid', '1998', 'Jeu d\'infiltration de Hideo Kojima où Solid Snake doit neutraliser une menace nucléaire sur une base isolée en Alaska. Mise en scène cinématographique, combats de boss mémorables et dialogues qui brisent le quatrième mur.', 1),
 (3, 'Crash Bandicoot', '1996', 'Plateforme 3D de Naughty Dog dans laquelle Crash, un bandicoot déjanté, traverse des îles piégées pour affronter le Dr Neo Cortex. Difficulté exigeante, niveaux variés et mascotte devenue emblématique de la première PlayStation.', 1),
@@ -216,7 +216,7 @@ ALTER TABLE `consoles`
 --
 ALTER TABLE `games`
   ADD PRIMARY KEY (`id_jeux`),
-  ADD KEY `fk_console` (`console_id`);
+  ADD KEY `fk_console` (`id_console`);
 
 --
 -- Index pour la table `ownerships`
@@ -270,7 +270,7 @@ ALTER TABLE `users`
 -- Contraintes pour la table `games`
 --
 ALTER TABLE `games`
-  ADD CONSTRAINT `fk_console` FOREIGN KEY (`console_id`) REFERENCES `consoles` (`id_console`);
+  ADD CONSTRAINT `fk_console` FOREIGN KEY (`cid_console`) REFERENCES `consoles` (`id_console`);
 
 --
 -- Contraintes pour la table `ownerships`
