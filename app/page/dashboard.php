@@ -55,15 +55,15 @@ $progression = $nb_total_jeux > 0
 <body class="page">
 
     <?php include '../include/header.php'; ?>
-<?php echo " jeux dispo $nb_total_jeux "?>
+
     <h1 class="page-title">
-        <?php echo "bonjour $pseudo"; ?>
+        <?php echo "Bonjour $pseudo."; ?>
     </h1>
 
     <div class="stats">
 
         <div class="stats-item">
-            <span class="stats-item-value"><?php echo $nb_jeux_consoles["nb_jeux_total"] ?></span>
+            <span class="stats-item-value"><?php echo $nb_possedes ?></span>
             <p class="stats-item-label">Possédé</p>
         </div>
 

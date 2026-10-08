@@ -6,13 +6,13 @@
 @import url('collection.css');
 @import url('login.css');
 @import url('console.css');
-
+@import url('404.css');
 /* THEMES */
 :root {
     --bg-form: linear-gradient(135deg, #141426 0%, #191B38 100%);
     --bg-main: linear-gradient(135deg, #0F0F1A 0%, #121A35 50%, #18234A 100%);
     --bg-secondary: linear-gradient(135deg, #141427 0%, #1A1E3D 100%);
-    --bg-card: linear-gradient(135deg, #111739 0%, #182451 50%, #1C2B5C 100%);
+    --bg-card: linear-gradient(135deg, #1b255c 0%, #182451 50%, #1C2B5C 100%);
     --text: white;
     --shadow: #00000067;
     --btn-border: rgba(255,255,255,0.4);
