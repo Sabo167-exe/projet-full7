@@ -72,11 +72,11 @@ $liste_marques_console = $stmt->fetchall();
                     <?php if ($nb_jeux_console["marque"] === $marque_console["marque"] ):?>
                     <a href="detail-console.php?console=<?= $nb_jeux_console["id_console"] ?> >" class="page-collection-marque-consoles-console">
                         <img class="page-collection-marque-consoles-console-img" src="../img/console/<?= $nb_jeux_console["id_console"] ?>.png" alt="image GameBoy">
-                        <div class="div-possession">
+                        <span class="span-possession">
                             <p class="page-collection-marque-consoles-console-possesion"><?= $nb_jeux_console["nb_jeux_possedes"] ."/". $nb_jeux_console["nb_jeux_total"] ?></p>
                             <?php if ($nb_jeux_console["nb_jeux_total"] == $nb_jeux_console["nb_jeux_possedes"]):?>
-                            <p>ok</p>
-                        </div>
+                            <p class="page-collection-marque-consoles-console-possesion">Full7</p>
+                            </span>
                         <?php endif?>
                         <h3 class="page-collection-marque-consoles-console-titre"><?= $nb_jeux_console["nom"] ?></h3>
                     </a>           
