@@ -81,7 +81,7 @@ if (isset( $_GET['add']) && !$ownership) {
             <img class="console-image" src="../img/jeux/<?= $id_jeu ?>.jpg" alt="<?= htmlspecialchars($Game['nom']) ?>">
             <?php if ($ownership) :  ?>
                 <p class="ownership-status">Vous possédez ce jeu</p>
-                <a href="?Games=31&delete">
+                <a href="?Games=<?php echo $id_jeu ?>&delete">
                     <div>
                         <p>retirer le jeu</p>
                     </div>

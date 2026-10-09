@@ -7,10 +7,42 @@ if (!isset($_SESSION['id_user'])) {
     header('Location: connection/connection.php');
     exit;
 }
-$sql = 'SELECT COUNT(id_jeux) nb_jeux, id_console FROM games GROUP BY id_console = 1';
+$sql = 'SELECT 
+	c.id_console,
+	c.nom,
+	c.marque,
+	COUNT(o.id_user) as nb_jeux_possedes,
+	COUNT(g.id_jeux) as nb_jeux_total
+	
+	
+
+FROM games g 
+INNER JOIN consoles c 
+ON g.id_console = c.id_console 
+LEFT JOIN ownerships o 
+ON g.id_jeux = o.id_jeux 
+
+WHERE o.id_user = :id_user OR o.id_user IS NULL
+GROUP BY c.id_console
+
+';
 
 $stmt = $pdo->prepare($sql);
-$stmt->execute(['nb_jeux' => $id_jeu]);
+$stmt->execute([':id_user' => $_SESSION['id_user']]);
+
+$nb_jeux_consoles = $stmt->fetchall();
+
+$sql2 = '   SELECT 
+                marque 
+            FROM 
+                consoles
+            GROUP BY
+                marque
+';
+
+$stmt = $pdo->prepare($sql2);
+$stmt->execute();
+$liste_marques_console = $stmt->fetchall();
 
 ?>
 
@@ -30,78 +62,29 @@ $stmt->execute(['nb_jeux' => $id_jeu]);
 
 <div class="page-collection">
     <h1 class="page-collection-title">Ma collection <a href="addcolection.php" class="btn-add"><span class="page-collection-title-btn">+</span></a></h1>
+ 
+    <?php foreach ($liste_marques_console as $marque_console) :?>
 
-    <div class="page-collection-marque nintendo">
-        <h2>Nintendo</h2>
-        <div class="page-collection-marque-consoles">
-            <a href="detail-console.php?console=4" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/4.png" alt="image GameBoy">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">GAME BOY</h3>
-            </a>
-            <a href="detail-console.php?console=5" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/5.png" alt="image NES">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">NES</h3>
-            </a>
-            <a href="detail-console.php?console=6" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/6.png" alt="image N64">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">N64</h3>
-            </a>
+        <div class="page-collection-marque <?=  $marque_console["marque"] ?>?>">
+            <h2><?=  $marque_console["marque"] ?></h2>
+            <div class="page-collection-marque-consoles">
+                <?php foreach ($nb_jeux_consoles as $nb_jeux_console) :?>
+                    <?php if ($nb_jeux_console["marque"] === $marque_console["marque"] ):?>
+                    <a href="detail-console.php?console=<?= $nb_jeux_console["id_console"] ?> >" class="page-collection-marque-consoles-console">
+                        <img class="page-collection-marque-consoles-console-img" src="../img/console/<?= $nb_jeux_console["id_console"] ?>.png" alt="image GameBoy">
+                        <p class="page-collection-marque-consoles-console-possesion"><?= $nb_jeux_console["nb_jeux_possedes"] ."/". $nb_jeux_console["nb_jeux_total"] ?></p>
+                        
+                        <h3 class="page-collection-marque-consoles-console-titre"><?= $nb_jeux_console["nom"] ?></h3>
+                    </a>           
+                    <?php endif?>
+                <?php endforeach?>
+                
+                
+            </div>
+            <button class="page-collection-marque-show">▼</button>
         </div>
-        <button class="page-collection-marque-show">▼</button>
-    </div>
+    <?php endforeach?>
 
-    <div class="page-collection-marque playstation">
-        <h2>PlayStation</h2>
-        <div class="page-collection-marque-consoles">
-            <a href="detail-console.php?console=1" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/1.png" alt="image PS1">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">PS1</h3>
-            </a>
-            <a href="detail-console.php?console=2" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/2.png" alt="image PS2">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">PS2</h3>
-            </a>
-            <a href="detail-console.php?console=3" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/3.png" alt="image PS3">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">PS3</h3>
-            </a>
-            <a href="detail-console.php?console=10" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/10.png" alt="image PSP">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">PSP</h3>
-            </a>
-        </div>
-        <button class="page-collection-marque-show">▼</button>
-    </div>
-
-    <div class="page-collection-marque xbox">
-        <h2>SEGA</h2>
-        <div class="page-collection-marque-consoles">
-            <a href="detail-console.php?console=7" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/7.png" alt="image Master System">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">Master System</h3>
-            </a>
-            <a href="detail-console.php?console=8" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/8.png" alt="image Mega Drive">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">Mega Drive</h3>
-            </a>
-            <a href="detail-console.php?console=9" class="page-collection-marque-consoles-console">
-                <img class="page-collection-marque-consoles-console-img" src="../img/console/9.png" alt="image Saturn">
-                <p class="page-collection-marque-consoles-console-possesion">0/10</p>
-                <h3 class="page-collection-marque-consoles-console-titre">Saturn</h3>
-            </a>
-        </div>
-        <button class="page-collection-marque-show">▼</button>
-    </div>
-</div>
 
 <?php include '../include/footer.php'; ?>
 
