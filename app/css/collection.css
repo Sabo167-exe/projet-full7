@@ -1,3 +1,9 @@
+.span-possession{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .page-collection-title {
     margin: 5px 0 15px;
 }
@@ -88,7 +94,7 @@
     }
 }
 .page-collection-marque-consoles-console-possesion {
-    margin: 8px 0 8px 8px;
+    margin: 8px 8px 8px 8px;
 }
 @media (max-width: 450px) {
     .page-collection-marque-consoles-console-possesion {
