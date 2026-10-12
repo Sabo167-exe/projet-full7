@@ -14,7 +14,6 @@ $stmt = $pdo->prepare('SELECT * FROM consoles WHERE id_console = :id');
 $stmt->execute(['id' => $id]);
 $console = $stmt->fetch(PDO::FETCH_ASSOC);
 $description = $console['description'] ?? 'Aucune description disponible pour cette console.';
-require __DIR__ . '/error404.php';
 
 if (!$console) {
     http_response_code(404);

@@ -62,9 +62,7 @@ $liste_marques_console = $stmt->fetchall();
 
 <div class="page-collection">
     <h1 class="page-collection-title">Ma collection <a href="addcolection.php" class="btn-add"><span class="page-collection-title-btn">+</span></a></h1>
- 
     <?php foreach ($liste_marques_console as $marque_console) :?>
-
         <div class="page-collection-marque <?=  $marque_console["marque"] ?>?>">
             <h2><?=  $marque_console["marque"] ?></h2>
             <div class="page-collection-marque-consoles">
@@ -76,8 +74,8 @@ $liste_marques_console = $stmt->fetchall();
                             <p class="page-collection-marque-consoles-console-possesion"><?= $nb_jeux_console["nb_jeux_possedes"] ."/". $nb_jeux_console["nb_jeux_total"] ?></p>
                             <?php if ($nb_jeux_console["nb_jeux_total"] == $nb_jeux_console["nb_jeux_possedes"]):?>
                             <p class="page-collection-marque-consoles-console-possesion">Full7</p>
+                            <?php endif?>
                             </span>
-                        <?php endif?>
                         <h3 class="page-collection-marque-consoles-console-titre"><?= $nb_jeux_console["nom"] ?></h3>
                     </a>           
                     <?php endif?>

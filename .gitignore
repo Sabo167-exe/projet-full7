@@ -3,3 +3,4 @@ secrets.php
 secrets*.php
 !secret-sample.php
 app/img/jeux/
+app/img/profil/*

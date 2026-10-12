@@ -1,0 +1,7 @@
+.profil-edit-apercu-img {
+    margin-left: 15px;
+    height: 250px;
+    width: 250px;
+    border-radius: 5%;
+    object-fit: cover;
+}
