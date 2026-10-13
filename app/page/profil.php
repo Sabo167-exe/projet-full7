@@ -44,7 +44,7 @@ if ($photo_profil) {
 
 } 
 
-if (isset($_POST['pseudo']) && $_POST['pseudo'] !== '') {
+if (isset($_POST['pseudo']) && $_POST['pseudo'] !== '' && strlen($_POST['pseudo']) < 25) {
     $new_pseudo = $_POST['pseudo'];
 
     $sql2 = "UPDATE users SET pseudo = '$new_pseudo' WHERE id_user = $iduser";
@@ -86,6 +86,8 @@ $pseudo = $_SESSION['pseudo'];
             <label for="pseudo">choisir un nouveau pseudo</label>
             <input type="text" name="pseudo" id="pseudo" placeholder="pseudo actuel <?php echo $pseudo ?>">
             <button type="submit" name="submit" class="profil-edit-form-btn">Enregistrer</button>
+            <?php if (strlen($_POST['pseudo']) > 25) {
+                    echo '<p style="color: red">25 caractere max</p>';} ?>
 
         </form>
     </div>
