@@ -34,6 +34,7 @@ document.addEventListener("keydown", (event) => {
 
 function toggleConsole(brand) {
     const show = document.querySelector(`.${brand} .page-collection-marque-show`);
+    if (!show) return;
     const consoles = document.querySelectorAll(`.${brand} .page-collection-marque-consoles`);
     
     show.addEventListener("click", () => {
@@ -47,4 +48,4 @@ function toggleConsole(brand) {
 
 toggleConsole("nintendo");
 toggleConsole("playstation");
-toggleConsole("xbox");
+toggleConsole("sega");
