@@ -11,8 +11,11 @@ $photo_profil = $_FILES['photo'];
 
 
 
-if ($photo_profil) {
+if ($photo_profil && $photo_profil['error'] === UPLOAD_ERR_OK
+    && in_array(strtolower(pathinfo($photo_profil['name'], PATHINFO_EXTENSION)), ['jpg', 'jpeg', 'png', 'gif', 'webp'])
+    && getimagesize($photo_profil['tmp_name'])) {
     $photoTmpName = $photo_profil["tmp_name"];
+
     $fileName = $photo_profil["name"];
 
     
@@ -47,10 +50,18 @@ if ($photo_profil) {
 if (isset($_POST['pseudo']) && $_POST['pseudo'] !== '' && strlen($_POST['pseudo']) < 25) {
     $new_pseudo = $_POST['pseudo'];
 
-    $sql2 = "UPDATE users SET pseudo = '$new_pseudo' WHERE id_user = $iduser";
-    $pdo->exec($sql2);
+    // vérifie si un AUTRE utilisateur a déjà ce pseudo
+    $stmt = $pdo->prepare("SELECT id_user FROM users WHERE pseudo = :pseudo AND id_user != :id_user");
+    $stmt->execute([':pseudo' => $new_pseudo, ':id_user' => $iduser]);
 
-    $_SESSION['pseudo'] = $new_pseudo;
+    if ($stmt->fetch()) {
+        $erreur_pseudo = "Ce pseudo est déjà utilisé.";
+    } else {
+        $stmt = $pdo->prepare("UPDATE users SET pseudo = :pseudo WHERE id_user = :id_user");
+        $stmt->execute([':pseudo' => $new_pseudo, ':id_user' => $iduser]);
+
+        $_SESSION['pseudo'] = $new_pseudo;
+    }
 }
 
 $pseudo = $_SESSION['pseudo'];
@@ -88,6 +99,7 @@ $pseudo = $_SESSION['pseudo'];
             <button type="submit" name="submit" class="profil-edit-form-btn">Enregistrer</button>
             <?php if (strlen($_POST['pseudo']) > 25) {
                     echo '<p style="color: red">25 caractere max</p>';} ?>
+            <?php if (isset($erreur_pseudo)) { echo '<p style="color: red">' . $erreur_pseudo . '</p>'; } ?>
 
         </form>
     </div>
