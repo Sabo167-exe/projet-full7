@@ -57,7 +57,7 @@ $progression = $nb_total_jeux > 0
     <?php include '../include/header.php'; ?>
 
     <h1 class="page-title">
-        <?php echo "Bonjour $pseudo."; ?>
+        <?php echo "Bonjour" ." " .  htmlspecialchars($pseudo); ?>
     </h1>
 
     <div class="stats">
