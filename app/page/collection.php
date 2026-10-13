@@ -19,12 +19,9 @@ $sql = 'SELECT
 FROM games g 
 INNER JOIN consoles c 
 ON g.id_console = c.id_console 
-LEFT JOIN ownerships o 
-ON g.id_jeux = o.id_jeux 
-
-WHERE o.id_user = :id_user OR o.id_user IS NULL
+LEFT JOIN ownerships o
+ON g.id_jeux = o.id_jeux AND o.id_user = :id_user
 GROUP BY c.id_console
-
 ';
 
 $stmt = $pdo->prepare($sql);
@@ -63,12 +60,12 @@ $liste_marques_console = $stmt->fetchall();
 <div class="page-collection">
     <h1 class="page-collection-title">Ma collection <a href="addcolection.php" class="btn-add"><span class="page-collection-title-btn">+</span></a></h1>
     <?php foreach ($liste_marques_console as $marque_console) :?>
-        <div class="page-collection-marque <?=  $marque_console["marque"] ?>?>">
+        <div class="page-collection-marque <?=  $marque_console["marque"] ?>">
             <h2><?=  $marque_console["marque"] ?></h2>
             <div class="page-collection-marque-consoles">
                 <?php foreach ($nb_jeux_consoles as $nb_jeux_console) :?>
                     <?php if ($nb_jeux_console["marque"] === $marque_console["marque"] ):?>
-                    <a href="detail-console.php?console=<?= $nb_jeux_console["id_console"] ?> >" class="page-collection-marque-consoles-console">
+                    <a href="detail-console.php?console=<?= $nb_jeux_console["id_console"] ?>" class="page-collection-marque-consoles-console">
                         <img class="page-collection-marque-consoles-console-img" src="../img/console/<?= $nb_jeux_console["id_console"] ?>.png" alt="image GameBoy">
                         <span class="span-possession">
                             <p class="page-collection-marque-consoles-console-possesion"><?= $nb_jeux_console["nb_jeux_possedes"] ."/". $nb_jeux_console["nb_jeux_total"] ?></p>
