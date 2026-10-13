@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_user'])) {
     exit;
 }
 $id_jeu = isset($_GET['Games']) ? (int) $_GET['Games'] : 0;
-$id_user = isset($_SESSION['id_user']);
+$id_user = (int) $_SESSION['id_user'];
 
 $stmt = $pdo->prepare('SELECT * FROM games WHERE id_jeux = :id_jeu');
 $stmt->execute(['id_jeu' => $id_jeu]);
