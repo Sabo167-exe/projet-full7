@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Version de déploiement : structure complète + données consoles et games uniquement
+-- Généré le : mar. 13 oct. 2026 à 11:52
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -20,7 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `projet_full7`
 --
-
 CREATE DATABASE IF NOT EXISTS `projet_full7` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `projet_full7`;
 
@@ -43,16 +42,16 @@ CREATE TABLE `consoles` (
 --
 
 INSERT INTO `consoles` (`id_console`, `nom`, `marque`, `annee_sortie`, `description`) VALUES
-(1, 'PlayStation', 'PlayStation', '1994', 'Première console de Sony, sortie en 1994. Elle démocratise la 3D et le support CD-ROM, et attire les joueurs adultes avec des licences majeures comme Final Fantasy VII, Metal Gear Solid et Gran Turismo.'),
-(2, 'PlayStation 2', 'PlayStation', '2000', 'Console la plus vendue de l\'histoire avec plus de 155 millions d\'exemplaires. Compatible avec les jeux PS1 et lecteur DVD intégré, elle a bénéficié d\'une ludothèque gigantesque sur plus de dix ans.'),
-(3, 'PlayStation 3', 'PlayStation', '2006', 'Console de Sony sortie en 2006, dotée d\'un lecteur Blu-ray et du PlayStation Network. Après un lancement difficile, elle s\'impose grâce à des exclusivités ambitieuses comme The Last of Us et Uncharted.'),
-(4, 'Game Boy', 'Nintendo', '1989', 'Console portable de Nintendo lancée en 1989 avec un écran monochrome vert. Très robuste et endurante côté batterie, elle doit son succès à Tetris puis à la déferlante Pokémon, et s\'est vendue à plus de 118 millions d\'exemplaires avec la Game Boy Color.'),
-(5, 'NES', 'Nintendo', '1983', 'Console 8 bits de Nintendo, sortie au Japon en 1983 sous le nom de Famicom. Elle relance l\'industrie du jeu vidéo après le krach de 1983 et installe des séries majeures comme Mario, Zelda et Metroid.'),
-(6, 'Nintendo 64', 'Nintendo', '1996', 'Console 64 bits de Nintendo sortie en 1996, la première à proposer une manette avec joystick analogique et quatre ports manettes. Elle marque l\'histoire avec Super Mario 64 et Ocarina of Time, mais reste fidèle aux cartouches.'),
-(7, 'Master System', 'Sega', '1985', 'Console 8 bits de Sega lancée en 1985, concurrente directe de la NES. Moins populaire au Japon et aux États-Unis, elle rencontre un vrai succès en Europe et au Brésil grâce à des adaptations d\'arcade de qualité.'),
-(8, 'Mega Drive', 'Sega', '1988', 'Console 16 bits de Sega sortie en 1988, connue sous le nom de Genesis en Amérique du Nord. Elle s\'impose avec Sonic, ses jeux d\'action rapides et une image de console plus « arcade » face à la Super Nintendo.'),
-(9, 'Saturn', 'Sega', '1994', 'Console 32 bits de Sega sortie en 1994, très appréciée pour ses adaptations d\'arcade et ses shoot\'em up. Malgré un succès commercial limité face à la PlayStation, elle a hébergé de nombreux jeux devenus cultes.'),
-(10, 'PSP', 'PlayStation', '2004', 'Console portable de Sony sortie en 2004, dotée d\'un grand écran couleur et de jeux sur disque UMD. Elle propose des graphismes proches de la PS2, la lecture de vidéos et de musique, et a accueilli de nombreux jeux devenus cultes.');
+(1, 'PlayStation', 'PlayStation', '1994', 'Sortie en 1994 au Japon et en 1995 en Europe, la PlayStation est la première console de Sony. Elle marque un tournant dans l’histoire du jeu vidéo grâce à son lecteur CD-ROM, offrant davantage d’espace de stockage que les cartouches. Elle permet également de faire découvrir au grand public des graphismes en 3D et un son plus immersif. Avec son design gris reconnaissable et sa manette devenue emblématique, la PS1 s’impose rapidement comme une console majeure de son époque.'),
+(2, 'PlayStation 2', 'PlayStation', '2000', 'Sortie en 2000, la PlayStation 2 est la deuxième console de Sony. Elle apporte une importante évolution technique avec des graphismes en 3D plus détaillés, des performances améliorées et un lecteur **DVD**, permettant également de regarder des films. Son design sobre et sa rétrocompatibilité avec les jeux PlayStation ont contribué à son immense succès et en ont fait l’une des consoles les plus vendues de l’histoire.'),
+(3, 'PlayStation 3', 'PlayStation', '2006', 'Sortie en 2006 en Europe, la PlayStation 3 marque une nouvelle génération de consoles Sony. Elle propose des graphismes en haute définition, un lecteur Blu-ray et une connexion Internet intégrée. Son processeur Cell lui permet d\'offrir des performances importantes pour son époque. Elle introduit également le PlayStation Network, permettant notamment de jouer en ligne et d\'accéder à différents services numériques.'),
+(4, 'Game Boy', 'Nintendo', '1989', 'Sortie en 1989, la Game Boy est une console portable développée par Nintendo. Malgré ses capacités techniques modestes, elle se distingue par sa faible consommation d\'énergie, sa robustesse et son format compact. Son écran monochrome et ses cartouches interchangeables permettent de jouer facilement partout, faisant de la Game Boy l\'une des consoles portables les plus emblématiques de son époque.'),
+(5, 'NES', 'Nintendo', '1983', 'Sortie en 1983 au Japon sous le nom de Famicom, puis en 1987 en Europe, la NES est une console majeure de Nintendo. Elle utilise des cartouches et propose des graphismes en 8 bits. Sa manette simple et précise ainsi que ses performances pour l\'époque ont contribué à populariser le jeu vidéo à domicile et à relancer le marché après la crise du début des années 1980.\n\n'),
+(6, 'Nintendo 64', 'Nintendo', '1996', 'Sortie en 1996, la Nintendo 64 est une console de Nintendo utilisant une architecture 64 bits. Elle se distingue par ses capacités graphiques en 3D et son utilisation de cartouches. Sa manette originale à trois branches et son port permettant de connecter plusieurs contrôleurs facilitent notamment les parties multijoueurs sur une même console.'),
+(7, 'Master System', 'Sega', '1985', 'Sortie en 1985 au Japon, la Master System est la première console de salon majeure de Sega. Elle utilise des cartouches et des cartes de jeu, avec des graphismes en 8 bits. Plus puissante que certaines consoles concurrentes de son époque, elle dispose également d\'une palette de couleurs plus importante et participe au développement de Sega sur le marché des consoles de salon.'),
+(8, 'Mega Drive', 'Sega', '1988', 'Sortie en 1988 au Japon et en 1990 en Europe, la Mega Drive est une console 16 bits développée par Sega. Elle offre des graphismes et des animations plus avancés que les consoles 8 bits précédentes. Son processeur rapide et son lecteur de cartouches lui permettent de proposer des jeux plus complexes, tandis que son modem optionnel ouvre la voie à certaines fonctionnalités en ligne.'),
+(9, 'Saturn', 'Sega', '1994', 'Sortie en 1994 au Japon et en 1995 en Europe, la Sega Saturn est une console 32 bits conçue principalement autour de la 2D et de la 3D. Elle utilise des CD-ROM et possède une architecture complexe composée de plusieurs processeurs. Cette puissance lui permet d\'afficher des graphismes détaillés et des effets avancés pour son époque.\r\n\r\n'),
+(10, 'PSP', 'PlayStation', '2004', 'Sortie en 2004 au Japon puis en 2005 en Europe, la PlayStation Portable est la première console portable de Sony. Elle possède un écran large haute résolution pour l\'époque et utilise des disques UMD comme support physique. Sa connexion Wi-Fi, son stockage sur Memory Stick et ses fonctions multimédias lui permettent également de lire des vidéos, de la musique et d\'accéder à différents services numériques.');
 
 -- --------------------------------------------------------
 
@@ -172,7 +171,8 @@ INSERT INTO `games` (`id_jeux`, `nom`, `annee_sortie`, `description`, `id_consol
 (97, 'LocoRoco', '2006', 'Plateforme original de Sony où l\'on incline le décor à l\'aide des boutons de tranche pour faire rouler des boules colorées. Univers joyeux, chansons décalées en langage inventé et un gameplay simple et charmant.', 10),
 (98, 'Daxter', '2006', 'Plateforme d\'action de Ready at Dawn où le fidèle compagnon de Jak vit sa propre aventure, en tant qu\'exterminateur de nuisibles à Haven City. Humour omniprésent, phases de combat et de plateforme variées et pleines de clins d\'œil.', 10),
 (99, 'Persona 3 Portable', '2009', 'RPG d\'Atlus où un lycéen combat des Ombres pendant une heure cachée de la nuit, tout en vivant sa vie quotidienne. Système de liens sociaux, combats au tour par tour, et une version portable enrichie avec un personnage féminin jouable.', 10),
-(100, 'Lumines', '2004', 'Puzzle de Q Entertainment où l\'on assemble des blocs de deux couleurs pendant qu\'une ligne balaie l\'écran au rythme de la musique. Un mélange hypnotique de sons et de visuels, présent dès le lancement de la console.', 10);
+(100, 'Lumines', '2004', 'Puzzle de Q Entertainment où l\'on assemble des blocs de deux couleurs pendant qu\'une ligne balaie l\'écran au rythme de la musique. Un mélange hypnotique de sons et de visuels, présent dès le lancement de la console.', 10),
+(101, 'skate or die', '2000', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -196,7 +196,7 @@ CREATE TABLE `ownerships` (
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `mdp` varchar(255) NOT NULL,
-  `photo_profil` varchar(255) DEFAULT NULL,
+  `photo_profil` varchar(255) DEFAULT 'base.jpeg',
   `pseudo` varchar(25) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -248,7 +248,7 @@ ALTER TABLE `consoles`
 -- AUTO_INCREMENT pour la table `games`
 --
 ALTER TABLE `games`
-  MODIFY `id_jeux` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id_jeux` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT pour la table `ownerships`
@@ -260,7 +260,7 @@ ALTER TABLE `ownerships`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
@@ -270,7 +270,7 @@ ALTER TABLE `users`
 -- Contraintes pour la table `games`
 --
 ALTER TABLE `games`
-  ADD CONSTRAINT `fk_console` FOREIGN KEY (`cid_console`) REFERENCES `consoles` (`id_console`);
+  ADD CONSTRAINT `fk_console` FOREIGN KEY (`id_console`) REFERENCES `consoles` (`id_console`);
 
 --
 -- Contraintes pour la table `ownerships`
