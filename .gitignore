@@ -4,3 +4,4 @@ secrets*.php
 !secret-sample.php
 app/img/jeux/
 app/img/profil/*
+!app/img/profil/base.jpeg
