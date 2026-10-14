@@ -64,7 +64,7 @@ if (isset($_POST['pseudo']) && $_POST['pseudo'] !== '' && strlen($_POST['pseudo'
     }
 }
 
-$pseudo = $_SESSION['pseudo'];
+$pseudo = $_SESSION;
 ?>
 
 <!DOCTYPE html>
