@@ -63,8 +63,6 @@ if (isset($_POST['pseudo']) && $_POST['pseudo'] !== '' && strlen($_POST['pseudo'
         $_SESSION['pseudo'] = $new_pseudo;
     }
 }
-
-$pseudo = $_SESSION;
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +93,7 @@ $pseudo = $_SESSION;
         </form>
         <form method="POST" enctype="multipart/form-data" class="profil-edit-form">
             <label for="pseudo">choisir un nouveau pseudo</label>
-            <input type="text" name="pseudo" id="pseudo" placeholder="pseudo actuel <?php echo $pseudo ?>">
+            <input type="text" name="pseudo" id="pseudo" placeholder="pseudo actuel <?php echo $pseudo; ?>">
             <button type="submit" name="submit" class="profil-edit-form-btn">Enregistrer</button>
             <?php if (strlen($_POST['pseudo']) > 25) {
                     echo '<p style="color: red">25 caractere max</p>';} ?>
