@@ -19,15 +19,3 @@ if (themeBtn) {
         
     });
 }
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "n" || event.key === "N"){
-        const isLight = document.documentElement.classList.toggle('light');
-        if (isLight) {
-            themeBtn.textContent = '☀️';
-          } else {
-            themeBtn.textContent = '🌙';
-          }
-        
-    }
-})
