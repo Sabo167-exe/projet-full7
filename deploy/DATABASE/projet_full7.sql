@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 13 oct. 2026 à 11:52
+-- Généré le : jeu. 15 oct. 2026 à 09:14
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -171,8 +171,7 @@ INSERT INTO `games` (`id_jeux`, `nom`, `annee_sortie`, `description`, `id_consol
 (97, 'LocoRoco', '2006', 'Plateforme original de Sony où l\'on incline le décor à l\'aide des boutons de tranche pour faire rouler des boules colorées. Univers joyeux, chansons décalées en langage inventé et un gameplay simple et charmant.', 10),
 (98, 'Daxter', '2006', 'Plateforme d\'action de Ready at Dawn où le fidèle compagnon de Jak vit sa propre aventure, en tant qu\'exterminateur de nuisibles à Haven City. Humour omniprésent, phases de combat et de plateforme variées et pleines de clins d\'œil.', 10),
 (99, 'Persona 3 Portable', '2009', 'RPG d\'Atlus où un lycéen combat des Ombres pendant une heure cachée de la nuit, tout en vivant sa vie quotidienne. Système de liens sociaux, combats au tour par tour, et une version portable enrichie avec un personnage féminin jouable.', 10),
-(100, 'Lumines', '2004', 'Puzzle de Q Entertainment où l\'on assemble des blocs de deux couleurs pendant qu\'une ligne balaie l\'écran au rythme de la musique. Un mélange hypnotique de sons et de visuels, présent dès le lancement de la console.', 10),
-(101, 'skate or die', '2000', NULL, 4);
+(100, 'Lumines', '2004', 'Puzzle de Q Entertainment où l\'on assemble des blocs de deux couleurs pendant qu\'une ligne balaie l\'écran au rythme de la musique. Un mélange hypnotique de sons et de visuels, présent dès le lancement de la console.', 10);
 
 -- --------------------------------------------------------
 
@@ -187,6 +186,38 @@ CREATE TABLE `ownerships` (
   `date_ajout` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `ownerships`
+--
+
+INSERT INTO `ownerships` (`id_appartenance`, `id_user`, `id_jeux`, `date_ajout`) VALUES
+(56, 1, 37, '2026-10-09 09:38:19'),
+(60, 1, 31, '2026-10-09 15:52:17'),
+(61, 1, 32, '2026-10-09 15:52:25'),
+(62, 1, 33, '2026-10-09 15:52:43'),
+(64, 1, 40, '2026-10-09 15:52:53'),
+(65, 1, 39, '2026-10-09 15:52:58'),
+(67, 1, 36, '2026-10-09 15:53:22'),
+(68, 1, 34, '2026-10-09 15:53:34'),
+(69, 1, 35, '2026-10-09 15:55:59'),
+(70, 1, 38, '2026-10-12 09:01:00'),
+(71, 1, 41, '2026-10-13 14:29:32'),
+(72, 1, 57, '2026-10-13 14:29:46'),
+(73, 9, 41, '2026-10-13 14:33:07'),
+(74, 9, 55, '2026-10-13 14:33:17'),
+(75, 9, 37, '2026-10-13 14:51:38'),
+(76, 9, 31, '2026-10-13 14:51:44'),
+(77, 9, 32, '2026-10-13 14:51:51'),
+(78, 9, 33, '2026-10-13 14:51:59'),
+(79, 9, 34, '2026-10-13 14:52:08'),
+(80, 9, 35, '2026-10-13 14:52:15'),
+(81, 9, 36, '2026-10-13 14:52:21'),
+(82, 9, 38, '2026-10-13 14:52:39'),
+(83, 9, 39, '2026-10-13 14:52:45'),
+(84, 9, 40, '2026-10-13 14:52:55'),
+(86, 10, 31, '2026-10-14 14:24:59'),
+(87, 10, 35, '2026-10-14 14:25:10');
+
 -- --------------------------------------------------------
 
 --
@@ -200,6 +231,22 @@ CREATE TABLE `users` (
   `pseudo` varchar(25) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id_user`, `mdp`, `photo_profil`, `pseudo`, `email`) VALUES
+(1, '$2y$10$cmFEoOlIk5tY1P82Il8VWehMRiOOKaf.Vfu6IhHN6uxzncnY6FdMy', '6ad0783bc8ae48.01920642.jpg', 'sabo167_', 'Sabo167@gmail.com'),
+(2, '$2y$10$JvhIH3sFmmxtLJIc73iVH.CLM39C/uv1KckmnmF928j4XL9KqgfsS', 'base.jpeg', 'aa', 'aa@aa.aa'),
+(3, '$2y$10$khuh23PkE5fwW1l3uXoO9ebTkaRilX4kvZ/vQAc7PSUapqc0N3ype', 'base.jpeg', 'bb', 'bb@bb.b'),
+(4, '$2y$10$3fnPTpXY7ghvnSU/TQQFnOFq20DR7arLYYcU7Oof7pkWbBOKi3ggO', 'base.jpeg', 'a', 'a@a.a'),
+(5, '$2y$10$r2W.qDtw322TVzKDHIzPuusFYZGNWDcjvEbJaeAWEE2yrUg9ZHzVu', 'base.jpeg', 'ff', 'ff@ff.ff'),
+(6, '$2y$10$mm8LvXBUGMnPcLYsZnYaReRicl8qCM1l00I7WwmDN37PJq9qBsOrq', 'base.jpeg', 'cc', 'cc@cc.cc'),
+(7, '$2y$10$XO3P9oLkk5FUzBRZRVCRJ.ttklP5mNgX.ACDYDxo08EQmXLBvhFGK', 'base.jpeg', 'adri', 'd@d.d'),
+(8, '$2y$10$2nuKA/1LDdpIxmVUmouPa.9.A.c5Z1FM8DaI2ZqQpnOoD1KdrmpDe', '6acca66db94ee5.01912090.jpeg', 'mcSABO', 'mcSabo@gmail.com'),
+(9, '$2y$10$HgDeV046lx2AUk1uvBgZCO7P7FzNHWAQ7oy1Ans8V0rHA.mapMPT2', '6ace28f164b396.84583916.png', 'sabo1678', 'gertrude@gmail.com'),
+(10, '$2y$10$n1nh5i3.pU5WUOAcPQXTS.HGopufAz4HqDbTabTG0bVmgEhtBQQsG', 'base.jpeg', 'Adrien', 'Adri@gmail.com');
 
 --
 -- Index pour les tables déchargées
@@ -254,13 +301,13 @@ ALTER TABLE `games`
 -- AUTO_INCREMENT pour la table `ownerships`
 --
 ALTER TABLE `ownerships`
-  MODIFY `id_appartenance` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_appartenance` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
