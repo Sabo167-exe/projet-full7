@@ -65,8 +65,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Inscription</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="page">
-
+<body class="page_inscription">
+<header class="header">
+    <img src="../../img/logo/logoFull7.png" alt="logo de full7" class="header-logo">
+    
+    <button class="theme-toggle" id="themeToggle" title="Changer le thème">🌙</button>
+    
+   
+</header>
+<main class='main_inscription'>
 <h1 class="form_title">Inscription</h1>
 
 <?php if ($erreur): ?>
@@ -107,5 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br>
 <p class="form_link">Déjà un compte ? <a class="form_link-action" href="connection.php">Se connecter</a></p>
 <script src="js/toogleconsole.js" defer></script>
+</main>
 </body>
 </html>
