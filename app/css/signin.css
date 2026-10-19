@@ -1,0 +1,14 @@
+.main_inscription {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.form_body {
+    max-width: 55vh;
+    border-radius: 15%;
+    padding: 50px;
+    width: 100%;
+    background: var(--bg-form);
+}
